@@ -1,0 +1,16 @@
+package:
+  name: foo
+  version: "1.0.0"
+
+source:
+  path: ../src
+
+build:
+  script: python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+
+requirements:
+    build:
+        - python
+        - setuptools
+    run:
+        - python

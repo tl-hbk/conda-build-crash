@@ -1,0 +1,20 @@
+name: Build Package
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniconda-version: "latest"
+          auto-activate-base: true
+          activate-environment: ""
+      - shell: cmd
+        run: conda install conda-build --yes
+      - shell: cmd
+        run: conda build recipe --python 3.8
+
