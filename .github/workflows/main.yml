@@ -16,5 +16,10 @@ jobs:
       - shell: cmd
         run: conda install conda-build --yes
       - shell: cmd
+        run: conda info
+      - shell: cmd
+        run: conda config --show-sources
+      - shell: cmd
+        run: conda list --show-channel-urls
+      - shell: cmd
         run: conda build recipe --python 3.8
-
